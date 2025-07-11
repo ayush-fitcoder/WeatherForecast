@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="favicon.gif" />
+  </head>
+  
+  <!-- Body -->
+  <body class="relative min-h-screen text-white font-sans">
+    
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="weatherbg.jpg"
+        alt="background"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-8">
+      <h1
+        class="text-5xl font-extrabold text-center mb-10 text-white tracking-tight drop-shadow-[0_4px_12px_rgba(59,130,246,0.7)]"
+      >
+        🌄 The Weather Watch
+      </h1>
+
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Left Panel -->
+        <div
+          class="w-full lg:w-1/3 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-md border border-blue-700"
+        >
+          <h2 class="text-xl font-semibold text-blue-200 mb-4">Search City</h2>
+
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Enter City"
+            class="w-full bg-blue-950 border border-blue-800 text-white placeholder-blue-300 p-3 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
+          <button
+            id="searchBtn"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition"
+          >
+            Search
+          </button>
+
+          <button
+            id="locationBtn"
+            class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition"
+          >
+            📍 Use Current Location
+          </button>
+
+          <!-- Recent Searches -->
+          <div class="mt-6">
+            <h3 class="text-md font-medium text-blue-300 mb-2">
+              Recent Searches
+            </h3>
+            <select
+              id="recentDropdown"
+              class="w-full bg-blue-950 border border-blue-800 text-white p-3 rounded-lg hidden"
+            >
+              <option disabled selected>Select from recent city</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="w-full lg:w-2/3 space-y-6">
+          <!-- Current Weather -->
+          <div
+            id="currentWeather"
+            class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-md border border-blue-700"
+          >
+            <h2 class="text-xl font-semibold text-blue-200 mb-4">
+              Current Weather
+            </h2>
+            <div id="weatherDetails" class="text-center text-white">
+              <p>No data. Search for a city or use current location.</p>
+            </div>
+          </div>
+
+          <!-- 5-Day Forecast -->
+          <div
+            id="forecast"
+            class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-md border border-blue-700"
+          >
+            <h2 class="text-xl font-semibold text-blue-200 mb-4">
+              5-Day Forecast
+            </h2>
+            <div
+              id="forecastCards"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
+            >
+              <!-- Forecast Cards Space -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="weatherforecast.js"></script>
+  </body>
+</html>
